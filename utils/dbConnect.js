@@ -1,24 +1,20 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const connection = {};
+const uri = 'mongodb+srv://v4x123:v4x123@cluster0.i3hnzcs.mongodb.net/Hello';
+export async function dbConnect() {
+  try {
+    await mongoose.connect(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    })
+    mongoose.set("strictQuery", false)
+    const db = await mongoose.connection
+    db.once('open', function () {
+      console.log('Database connected successfully!')
+    })
+    db.on('error', console.error.bind(console, 'Database connection failed'))
 
-(async function dbConnect() {
-	if (connection.isConnected) {
-		return;
-	}
-
-	try {
-		const db = await mongoose.connect(process.env.MONGO_URI, {
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
-			useCreateIndex: true,
-			useFindAndModify: false,
-		});
-
-		connection.isConnected = db.connections[0].readyState;
-
-		console.log("MongoDB Connected");
-	} catch (error) {
-		console.log(error);
-	}
-})();
+  } catch (error) {
+    console.log(error);
+  }
+}
