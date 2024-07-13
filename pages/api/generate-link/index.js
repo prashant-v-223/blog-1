@@ -1,7 +1,10 @@
 // pages/api/generate-link.js
 import Employee from '@/models/Employee';
 import TemporaryLink from '@/models/TemporaryLink';
-import "@/utils/dbConnect";
+import { connectToDatabase } from "@/utils/dbConnect";
+
+
+connectToDatabase();
 import { ObjectId } from 'mongoose';
 
 export default async function handler(req, res) {
