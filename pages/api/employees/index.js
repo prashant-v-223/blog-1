@@ -1,8 +1,8 @@
 import Employee from "@/models/Employee";
-import { connectToDatabase } from "@/utils/dbConnect";
+import { dbConnect } from "@/utils/dbConnect";
 
 
-connectToDatabase();
+dbConnect();
 
 export default async (req, res) => {
 	const { method } = req;
