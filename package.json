@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build && next export",
+		"build": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",
 		"start": "next start",
 		"lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
 		"lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
@@ -25,6 +25,7 @@
 	},
 	"dependencies": {
 		"clsx": "^1.1.1",
+		"firebase": "^10.12.3",
 		"mongoose": "^5.10.7",
 		"next": "^9.5.3",
 		"next-redux-wrapper": "^6.0.2",
