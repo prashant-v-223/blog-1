@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"repository": "https://github.com/roldanjr/next-crud.git",
-	"author": "Roldan Montilla Jr <roldanjrmontilla@gmail.com>",
+	"author": "Roldan Montilla Jr <roldanjrmontilla@gmail.com>", 
 	"license": "MIT",
 	"scripts": {
 		"dev": "next dev",
